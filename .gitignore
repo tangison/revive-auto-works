@@ -56,3 +56,4 @@ server.log
 /worklog.md
 .zscripts/db/custom.db
 db/
+upload/
