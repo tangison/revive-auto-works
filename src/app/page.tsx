@@ -40,6 +40,9 @@ const WA_MESSAGE = "Hi Revive Auto Works, I'd like to book a service for my vehi
 const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`;
 const WA_LINK_PLAIN = `https://wa.me/${WA_NUMBER}`;
 const EMAIL = "reviveautonam@gmail.com";
+const SITE_URL = "https://www.reviveautoworks.cc";
+const AGENCY_URL = "https://studio.tangison.com";
+const AGENCY_NAME = "Tangison Studio";
 
 // Animation Variants
 const fadeInUp = {
@@ -119,20 +122,30 @@ export default function App() {
     { name: 'Services', href: '#services' },
     { name: 'Why Us', href: '#why-us' },
     { name: 'About', href: '#about' },
+    { name: 'FAQ', href: '#faq' },
   ];
 
-  // Local Business Schema for SEO
+  // Local Business (AutoRepair) Schema for SEO — rich local search results
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
     "name": "Revive Auto Works",
-    "description": "Professional vehicle diagnostics, repairs and maintenance services. Driven by excellence.",
-    "url": "https://revive-auto-works.vercel.app",
+    "description": "Professional vehicle diagnostics, repairs and maintenance services in Namibia. Over 10 years experience, 5,000+ vehicles serviced, 100% OEM parts. Driven by excellence.",
+    "url": SITE_URL,
     "telephone": `+${WA_NUMBER}`,
     "email": EMAIL,
     "areaServed": {
       "@type": "Country",
       "name": "Namibia"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "NA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -22.5609,
+      "longitude": 14.4947
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
@@ -141,16 +154,180 @@ export default function App() {
       "closes": "17:00"
     },
     "priceRange": "$$",
+    "currenciesAccepted": "NAD",
+    "paymentAccepted": "Cash, Credit Card, EFT",
+    "sameAs": [WA_LINK_PLAIN],
+    "founder": {
+      "@type": "Organization",
+      "name": "Revive Auto Works"
+    }
+  };
+
+  // Organization Schema — for knowledge panel + AI citations
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Revive Auto Works",
+    "alternateName": "Revive Auto Works Namibia",
+    "url": SITE_URL,
+    "logo": `${SITE_URL}/logo-512.png`,
+    "description": "Professional automotive repair and vehicle servicing workshop in Namibia. Specialising in engine diagnostics, routine servicing, brake and suspension repairs, electrical systems, pre-purchase inspections, and general maintenance.",
+    "email": EMAIL,
+    "telephone": `+${WA_NUMBER}`,
+    "areaServed": "Namibia",
+    "knowsAbout": [
+      "Automotive engine diagnostics",
+      "Vehicle routine servicing",
+      "Brake and suspension repairs",
+      "Automotive electrical systems",
+      "Pre-purchase vehicle inspections",
+      "General vehicle maintenance",
+      "OEM automotive parts"
+    ],
     "sameAs": [WA_LINK_PLAIN]
+  };
+
+  // WebPage Schema with breadcrumbs for richer search results
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Revive Auto Works | Auto Repairs & Servicing in Namibia",
+    "description": "Professional vehicle diagnostics, repairs and maintenance services in Namibia. 10+ years experience, 5,000+ vehicles serviced, 100% OEM parts.",
+    "url": SITE_URL,
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Revive Auto Works",
+      "url": SITE_URL
+    },
+    "about": {
+      "@type": "AutoRepair",
+      "name": "Revive Auto Works"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": `${SITE_URL}/og-image.png`
+    },
+    "inLanguage": "en",
+    "dateModified": "2026-06-23"
+  };
+
+  // FAQPage Schema — +40% AI visibility per Princeton GEO research
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What services does Revive Auto Works offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Revive Auto Works offers six core automotive services: engine diagnostics and repairs, routine servicing (oil changes, filter replacements, fluid checks), brake and suspension repairs, electrical system repairs (battery, wiring, alternators, starters, lighting), pre-purchase vehicle inspections, and general maintenance from minor tweaks to major overhauls. All work is performed using 100% OEM quality parts by experienced technicians."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Revive Auto Works located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Revive Auto Works is an automotive repair workshop based in Namibia. The workshop serves customers across the country, providing professional vehicle diagnostics, repairs and maintenance services. Bookings are managed via WhatsApp at +264 81 268 0826."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I book a service with Revive Auto Works?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Booking a service with Revive Auto Works is simple: send a WhatsApp message to +264 81 268 0826 to discuss your vehicle's needs and schedule a visit. There are no online forms to fill in — every enquiry goes directly to the workshop team via WhatsApp for a personal response. Operating hours are Monday to Friday, 08:00 to 17:00."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Revive Auto Works use genuine OEM parts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Revive Auto Works uses 100% quality OEM (Original Equipment Manufacturer) components across all repairs and servicing. This commitment to genuine parts ensures vehicle warranty integrity, optimal performance, and long-term reliability. The workshop has maintained this standard across more than 5,000 vehicles serviced over 10+ years of operation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the customer satisfaction rate at Revive Auto Works?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Revive Auto Works maintains a 99% customer satisfaction rate, built on 10+ years of experience and over 5,000 vehicles serviced. The workshop bridges the gap between dealership expertise and independent workshop personalisation, delivering reliable, transparent service with efficient turnaround times and guaranteed customer satisfaction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Revive Auto Works offer pre-purchase vehicle inspections?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Revive Auto Works offers detailed pre-purchase vehicle inspections to give buyers absolute peace of mind before purchasing a used vehicle. The inspection covers engine diagnostics, electrical systems, brakes, suspension, and overall vehicle condition, providing a comprehensive report that helps buyers make an informed decision."
+        }
+      }
+    ]
+  };
+
+  // BreadcrumbList Schema — for rich snippets
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": SITE_URL
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": `${SITE_URL}#services`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Why Choose Us",
+        "item": `${SITE_URL}#why-us`
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "About",
+        "item": `${SITE_URL}#about`
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "FAQ",
+        "item": `${SITE_URL}#faq`
+      }
+    ]
   };
 
   return (
     <div className="min-h-screen bg-[#090a0f] text-[#f3f4f6] selection:bg-[#1E90FF] selection:text-white" style={{ fontFamily: 'Manrope, sans-serif' }}>
 
-      {/* JSON-LD Local Business Schema */}
+      {/* JSON-LD Schema Markup — comprehensive for SEO + GEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Skip to content link for accessibility */}
@@ -165,7 +342,20 @@ export default function App() {
       <header>
         <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[#090a0f]/90 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent py-6'}`} aria-label="Main navigation">
           <div className="container max-w-7xl mx-auto px-6 flex items-center justify-between">
-            <a href="#" className="z-50 relative" aria-label="Revive Auto Works home"><Logo /></a>
+            <div className="z-50 relative flex items-center gap-4">
+              <a href="#" aria-label="Revive Auto Works home"><Logo /></a>
+              <span className="hidden lg:inline-block text-[0.6rem] font-semibold tracking-[0.18em] text-[#5a6068] uppercase border-l border-white/10 pl-4 leading-tight">
+                Website by<br/>
+                <a
+                  href={AGENCY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#8d939b] hover:text-[#1E90FF] transition-colors normal-case tracking-wide font-bold"
+                >
+                  Tangison Studio
+                </a>
+              </span>
+            </div>
 
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-8">
@@ -223,6 +413,19 @@ export default function App() {
                   <MessageCircle className="w-5 h-5 mr-2" aria-hidden="true" />
                   Book via WhatsApp
                 </Button>
+                {/* Tangison Studio credit at bottom of mobile offcanvas */}
+                <div className="absolute bottom-8 left-0 right-0 flex flex-col items-center gap-1">
+                  <span className="text-[0.65rem] font-semibold tracking-[0.2em] text-[#8d939b] uppercase">Website by</span>
+                  <a
+                    href={AGENCY_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-bold tracking-wider text-white hover:text-[#1E90FF] transition-colors"
+                  >
+                    {AGENCY_NAME}
+                  </a>
+                  <span className="text-[0.6rem] font-medium tracking-wider text-[#8d939b]">studio.tangison.com</span>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
@@ -561,6 +764,70 @@ export default function App() {
           </div>
         </section>
 
+        {/* FAQ Section — answer-first format for GEO/AI visibility (+40%) */}
+        <section id="faq" className="py-24 bg-[#090a0f]" aria-labelledby="faq-heading">
+          <div className="container max-w-4xl mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-[#1E90FF] text-sm font-bold tracking-[0.2em] uppercase mb-4">Frequently Asked Questions</h2>
+              <h3 id="faq-heading" className="text-3xl md:text-5xl font-extrabold text-white mb-6">YOUR QUESTIONS, ANSWERED.</h3>
+              <div className="h-1 w-20 bg-[#1E90FF] mx-auto rounded-full" aria-hidden="true" />
+            </motion.div>
+
+            <div className="space-y-4">
+              {[
+                {
+                  q: "What services does Revive Auto Works offer?",
+                  a: "Revive Auto Works offers six core automotive services in Namibia: engine diagnostics and repairs, routine servicing (oil changes, filter replacements, fluid checks), brake and suspension repairs, electrical system repairs (battery, wiring, alternators, starters, lighting), pre-purchase vehicle inspections, and general maintenance from minor tweaks to major overhauls. All work is performed using 100% OEM quality parts by experienced technicians."
+                },
+                {
+                  q: "Where is Revive Auto Works located?",
+                  a: "Revive Auto Works is an automotive repair workshop based in Namibia, serving customers across the country with professional vehicle diagnostics, repairs and maintenance. Bookings are managed via WhatsApp at +264 81 268 0826, Monday to Friday, 08:00 to 17:00."
+                },
+                {
+                  q: "How do I book a service with Revive Auto Works?",
+                  a: "Booking is simple — send a WhatsApp message to +264 81 268 0826 to discuss your vehicle's needs and schedule a visit. There are no online forms to fill in; every enquiry goes directly to the workshop team via WhatsApp for a personal response, typically within operating hours (Mon–Fri, 08:00–17:00)."
+                },
+                {
+                  q: "Does Revive Auto Works use genuine OEM parts?",
+                  a: "Yes. Revive Auto Works uses 100% quality OEM (Original Equipment Manufacturer) components across all repairs and servicing. This commitment ensures vehicle warranty integrity, optimal performance, and long-term reliability. The workshop has maintained this standard across more than 5,000 vehicles serviced over 10+ years of operation."
+                },
+                {
+                  q: "What is the customer satisfaction rate at Revive Auto Works?",
+                  a: "Revive Auto Works maintains a 99% customer satisfaction rate, built on 10+ years of experience and over 5,000 vehicles serviced. The workshop bridges the gap between dealership expertise and independent workshop personalisation, delivering reliable, transparent service with efficient turnaround times and guaranteed customer satisfaction."
+                },
+                {
+                  q: "Does Revive Auto Works offer pre-purchase vehicle inspections?",
+                  a: "Yes. Revive Auto Works offers detailed pre-purchase vehicle inspections to give buyers absolute peace of mind before purchasing a used vehicle. The inspection covers engine diagnostics, electrical systems, brakes, suspension, and overall vehicle condition, providing a comprehensive report that helps buyers make an informed decision."
+                }
+              ].map((faq, i) => (
+                <motion.details
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="group p-6 rounded-xl bg-[#12141c] border border-white/5 hover:border-[#1E90FF]/30 transition-colors"
+                >
+                  <summary className="cursor-pointer list-none flex items-center justify-between gap-4">
+                    <h4 className="text-lg font-bold text-white tracking-wide pr-4">{faq.q}</h4>
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#1E90FF]/10 border border-[#1E90FF]/30 flex items-center justify-center text-[#1E90FF] group-open:rotate-45 transition-transform">
+                      <span className="text-xl leading-none font-light">+</span>
+                    </span>
+                  </summary>
+                  <p className="text-[#8d939b] leading-relaxed text-sm font-medium mt-4 pt-4 border-t border-white/5">
+                    {faq.a}
+                  </p>
+                </motion.details>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="relative py-32 overflow-hidden bg-[#090a0f]" aria-labelledby="cta-heading">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#1E90FF]/10 via-transparent to-transparent opacity-60" aria-hidden="true" />
@@ -678,9 +945,23 @@ export default function App() {
             <p className="text-xs text-[#8d939b] tracking-wide text-center md:text-left">
               &copy; {new Date().getFullYear()} Revive Auto Works. All rights reserved. Driven by Excellence.
             </p>
-            <p className="text-xs text-[#8d939b] tracking-wide">
-              Expert Care. Lasting Performance.
-            </p>
+            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
+              <p className="text-xs text-[#8d939b] tracking-wide">
+                Expert Care. Lasting Performance.
+              </p>
+              <p className="text-xs text-[#8d939b] tracking-wide flex items-center gap-1.5">
+                Website by
+                <a
+                  href={AGENCY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold text-white hover:text-[#1E90FF] transition-colors"
+                  aria-label={`${AGENCY_NAME} — visit studio.tangison.com`}
+                >
+                  {AGENCY_NAME}
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </footer>

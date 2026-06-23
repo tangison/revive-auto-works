@@ -1,0 +1,16 @@
+/* TEAM */
+Founder: Revive Auto Works
+Email: reviveautonam@gmail.com
+WhatsApp: +264 81 268 0826
+
+/* DESIGN & DEVELOPMENT */
+Studio: Tangison Studio
+Website: https://studio.tangison.com
+Location: Atlantic Coast
+
+/* SITE */
+Last update: 2026
+Language: English
+Standards: Next.js, TypeScript, Tailwind CSS, Framer Motion
+Components: shadcn/ui, Lucide React
+Software: Vercel
