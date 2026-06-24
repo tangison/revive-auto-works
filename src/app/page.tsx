@@ -130,7 +130,7 @@ export default function App() {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
     "name": "Revive Auto Works",
-    "description": "Professional vehicle diagnostics, repairs and maintenance services in Namibia. Over 10 years experience, 5,000+ vehicles serviced, 100% OEM parts. Driven by excellence.",
+    "description": "Professional vehicle diagnostics, repairs and maintenance services in Namibia. Quality OE parts, expert technicians, reliable service. Driven by excellence.",
     "url": SITE_URL,
     "telephone": `+${WA_NUMBER}`,
     "email": EMAIL,
@@ -182,7 +182,7 @@ export default function App() {
       "Automotive electrical systems",
       "Pre-purchase vehicle inspections",
       "General vehicle maintenance",
-      "OEM automotive parts"
+      "OE automotive parts"
     ],
     "sameAs": [WA_LINK_PLAIN]
   };
@@ -192,7 +192,7 @@ export default function App() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Revive Auto Works | Auto Repairs & Servicing in Namibia",
-    "description": "Professional vehicle diagnostics, repairs and maintenance services in Namibia. 10+ years experience, 5,000+ vehicles serviced, 100% OEM parts.",
+    "description": "Professional vehicle diagnostics, repairs and maintenance services in Namibia. Quality OE parts, expert technicians, reliable service.",
     "url": SITE_URL,
     "isPartOf": {
       "@type": "WebSite",
@@ -221,7 +221,7 @@ export default function App() {
         "name": "What services does Revive Auto Works offer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Revive Auto Works offers six core automotive services: engine diagnostics and repairs, routine servicing (oil changes, filter replacements, fluid checks), brake and suspension repairs, electrical system repairs (battery, wiring, alternators, starters, lighting), pre-purchase vehicle inspections, and general maintenance from minor tweaks to major overhauls. All work is performed using 100% OEM quality parts by experienced technicians."
+          "text": "Revive Auto Works offers six core automotive services: engine diagnostics and repairs, routine servicing (oil changes, filter replacements, fluid checks), brake and suspension repairs, electrical system repairs (battery, wiring, alternators, starters, lighting), pre-purchase vehicle inspections, and general maintenance from minor tweaks to major overhauls. All work is performed using quality OE (Original Equipment) parts by experienced technicians."
         }
       },
       {
@@ -242,10 +242,10 @@ export default function App() {
       },
       {
         "@type": "Question",
-        "name": "Does Revive Auto Works use genuine OEM parts?",
+        "name": "Does Revive Auto Works use genuine OE parts?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Revive Auto Works uses 100% quality OEM (Original Equipment Manufacturer) components across all repairs and servicing. This commitment to genuine parts ensures vehicle warranty integrity, optimal performance, and long-term reliability. The workshop has maintained this standard across more than 5,000 vehicles serviced over 10+ years of operation."
+          "text": "Yes. Revive Auto Works uses quality OE (Original Equipment) parts across all repairs and servicing. This commitment to genuine parts ensures vehicle warranty integrity, optimal performance, and long-term reliability. The workshop maintains this standard across every vehicle that comes through the doors."
         }
       },
       {
@@ -253,7 +253,7 @@ export default function App() {
         "name": "What is the customer satisfaction rate at Revive Auto Works?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Revive Auto Works maintains a 99% customer satisfaction rate, built on 10+ years of experience and over 5,000 vehicles serviced. The workshop bridges the gap between dealership expertise and independent workshop personalisation, delivering reliable, transparent service with efficient turnaround times and guaranteed customer satisfaction."
+          "text": "Revive Auto Works is committed to delivering a 99% customer satisfaction rate. The workshop bridges the gap between dealership expertise and independent workshop personalisation, delivering reliable, transparent service with efficient turnaround times and guaranteed customer satisfaction."
         }
       },
       {
@@ -512,10 +512,10 @@ export default function App() {
           <div className="container max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/5">
               {[
-                { label: "Years Experience", value: "10+" },
-                { label: "Vehicles Serviced", value: "5,000+" },
-                { label: "Quality OEM Parts", value: "100%" },
-                { label: "Customer Satisfaction", value: "99%" }
+                { label: "Customer Satisfaction", value: "99%" },
+                { label: "Quality OE Parts", value: "100%" },
+                { label: "Expert Technicians", value: "✓" },
+                { label: "Workmanship Guarantee", value: "✓" }
               ].map((stat, i) => (
                 <motion.div
                   key={i}
@@ -673,7 +673,7 @@ export default function App() {
               <div className="lg:col-span-2 grid sm:grid-cols-2 gap-4">
                 {[
                   "Experienced Technicians",
-                  "Quality OEM Components",
+                  "Quality OE Components",
                   "Reliable, Transparent Service",
                   "Guaranteed Customer Satisfaction",
                   "State-of-the-Art Diagnostics",
@@ -733,7 +733,7 @@ export default function App() {
                   step: "03",
                   icon: <Wrench className="w-7 h-7" />,
                   title: "Repair & Service",
-                  desc: "We execute precise repairs using quality OEM components and proven methods."
+                  desc: "We execute precise repairs using quality OE components and proven methods."
                 },
                 {
                   step: "04",
@@ -782,7 +782,7 @@ export default function App() {
               {[
                 {
                   q: "What services does Revive Auto Works offer?",
-                  a: "Revive Auto Works offers six core automotive services in Namibia: engine diagnostics and repairs, routine servicing (oil changes, filter replacements, fluid checks), brake and suspension repairs, electrical system repairs (battery, wiring, alternators, starters, lighting), pre-purchase vehicle inspections, and general maintenance from minor tweaks to major overhauls. All work is performed using 100% OEM quality parts by experienced technicians."
+                  a: "Revive Auto Works offers six core automotive services in Namibia: engine diagnostics and repairs, routine servicing (oil changes, filter replacements, fluid checks), brake and suspension repairs, electrical system repairs (battery, wiring, alternators, starters, lighting), pre-purchase vehicle inspections, and general maintenance from minor tweaks to major overhauls. All work is performed using quality OE (Original Equipment) parts by experienced technicians."
                 },
                 {
                   q: "Where is Revive Auto Works located?",
@@ -793,12 +793,12 @@ export default function App() {
                   a: "Booking is simple — send a WhatsApp message to +264 81 268 0826 to discuss your vehicle's needs and schedule a visit. There are no online forms to fill in; every enquiry goes directly to the workshop team via WhatsApp for a personal response, typically within operating hours (Mon–Fri, 08:00–17:00)."
                 },
                 {
-                  q: "Does Revive Auto Works use genuine OEM parts?",
-                  a: "Yes. Revive Auto Works uses 100% quality OEM (Original Equipment Manufacturer) components across all repairs and servicing. This commitment ensures vehicle warranty integrity, optimal performance, and long-term reliability. The workshop has maintained this standard across more than 5,000 vehicles serviced over 10+ years of operation."
+                  q: "Does Revive Auto Works use genuine OE parts?",
+                  a: "Yes. Revive Auto Works uses quality OE (Original Equipment) parts across all repairs and servicing. This commitment to genuine parts ensures vehicle warranty integrity, optimal performance, and long-term reliability. The workshop maintains this standard across every vehicle that comes through the doors."
                 },
                 {
                   q: "What is the customer satisfaction rate at Revive Auto Works?",
-                  a: "Revive Auto Works maintains a 99% customer satisfaction rate, built on 10+ years of experience and over 5,000 vehicles serviced. The workshop bridges the gap between dealership expertise and independent workshop personalisation, delivering reliable, transparent service with efficient turnaround times and guaranteed customer satisfaction."
+                  a: "Revive Auto Works is committed to delivering a 99% customer satisfaction rate. The workshop bridges the gap between dealership expertise and independent workshop personalisation, delivering reliable, transparent service with efficient turnaround times and guaranteed customer satisfaction."
                 },
                 {
                   q: "Does Revive Auto Works offer pre-purchase vehicle inspections?",

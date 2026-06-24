@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | Revive Auto Works",
   },
   description:
-    "Professional vehicle diagnostics, repairs and maintenance in Namibia. 10+ years experience, 5,000+ vehicles serviced, 100% OEM parts. Book via WhatsApp.",
+    "Professional vehicle diagnostics, repairs and maintenance in Namibia. Quality OE parts, expert technicians, reliable service. Book via WhatsApp.",
   keywords: [
     "Revive Auto Works",
     "automotive repairs Namibia",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     "electrical system repairs",
     "routine servicing",
     "oil change Namibia",
-    "OEM parts",
+    "OE parts",
   ],
   authors: [
     { name: "Revive Auto Works" },
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Revive Auto Works | Auto Repairs & Servicing in Namibia",
     description:
-      "Professional vehicle diagnostics, repairs and maintenance in Namibia. 10+ years experience, 5,000+ vehicles serviced. Driven by excellence.",
+      "Professional vehicle diagnostics, repairs and maintenance in Namibia. Quality OE parts, expert technicians. Driven by excellence.",
     url: SITE_URL,
     siteName: "Revive Auto Works",
     type: "website",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Revive Auto Works | Auto Repairs & Servicing in Namibia",
     description:
-      "Professional vehicle diagnostics, repairs and maintenance. 10+ years experience. Driven by excellence.",
+      "Professional vehicle diagnostics, repairs and maintenance. Quality OE parts, expert technicians. Driven by excellence.",
     images: ["/og-image.png"],
   },
   robots: {
