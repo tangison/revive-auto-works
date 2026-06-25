@@ -59,7 +59,7 @@ Auto-deployed to Vercel on push to `main`.
 ## Contact
 
 - WhatsApp: [+264 81 268 0826](https://wa.me/264812680826)
-- Email: reviveautonam@gmail.com
+- Email: info@reviveautoworks.cc
 - Area: Namibia
 
 ---

@@ -39,7 +39,7 @@ const WA_NUMBER = "264812680826";
 const WA_MESSAGE = "Hi Revive Auto Works, I'd like to book a service for my vehicle.";
 const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`;
 const WA_LINK_PLAIN = `https://wa.me/${WA_NUMBER}`;
-const EMAIL = "reviveautonam@gmail.com";
+const EMAIL = "info@reviveautoworks.cc";
 const SITE_URL = "https://www.reviveautoworks.cc";
 const AGENCY_URL = "https://studio.tangison.com";
 const AGENCY_NAME = "Tangison Studio";
